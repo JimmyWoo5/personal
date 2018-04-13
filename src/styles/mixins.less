@@ -1,0 +1,138 @@
+//font-size
+.font-size(@size:14px) {
+  font-size: @size;
+}
+
+//line-height
+.line-height(@h:24px;) {
+  height: @h;
+  line-height: @h;
+}
+
+//height: 100%;
+.height100 {
+  height: 100%;
+}
+
+//font-weight
+.font-weight {
+  font-weight: bold;
+}
+
+//圆角（调用方式：  .border-radius(20px);  ）
+.border-radius (@radius: 4px) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  -ms-border-radius: @radius;
+  -o-border-radius: @radius;
+  border-radius: @radius;
+}
+
+//方块阴影（调用方式： .box-shadow(5px, 5px, 6px, 0.3);）
+.box-shadow (@x: 0px, @y: 3px, @blur: 5px, @alpha: 0.5) {
+  -webkit-box-shadow: @x @y @blur rgba(0, 0, 0, @alpha);
+  -moz-box-shadow: @x @y @blur rgba(0, 0, 0, @alpha);
+  -ms-box-shadow: @x @y @blur rgba(0, 0, 0, @alpha);
+  -o-box-shadow: @x @y @blur rgba(0, 0, 0, @alpha);
+  box-shadow: @x @y @blur rgba(0, 0, 0, @alpha);
+}
+
+//过渡（调用方式：  .transition(all, 0.5s, ease-in);）
+.transition (@prop: all, @time: 0.5s, @ease: linear) {
+  -webkit-transition: @prop @time @ease;
+  -moz-transition: @prop @time @ease;
+  -ms-transition: @prop @time @ease;
+  -o-transition: @prop @time @ease;
+  transition: @prop @time @ease;
+}
+
+//线性渐变（调用方式： .gradient(left, #663333, #333333);）
+.gradient (@origin: left, @start: #ffffff, @stop: #000000) {
+  background-color: @start;
+  background-image: -webkit-linear-gradient(@origin, @start, @stop);
+  background-image: -moz-linear-gradient(@origin, @start, @stop);
+  background-image: -ms-linear-gradient(@origin, @start, @stop);
+  background-image: -o-linear-gradient(@origin, @start, @stop);
+  background-image: linear-gradient(@origin, @start, @stop);
+}
+
+//定位（调用方式： .position(fixed,0,10px,10px,0);）
+.position (@location: absolute, @top:0, @right:0, @bottom:0, @left: 0) {
+  position: @location;
+  top: @top;
+  right: @right;
+  bottom: @bottom;
+  left: @left;
+}
+
+/*公共类*/
+//float
+.fl-l {
+  float: left;
+}
+
+.fl-r {
+  float: right;
+}
+
+//padding
+.padding2val(@tb:5px,@lr:10px) {
+  padding: @tb @lr;
+}
+
+//居中
+.margin0auto(@m:0) {
+  margin: @m auto;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+
+//边框（调用方式： .border(1px,@main-color);）
+.border(@width:1px,@color:@halving-line-color) {
+  border: @width solid @color;
+}
+
+//border和padding计算入width之内
+.box-sizing {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+//清除浮动
+.clear {
+  clear: both
+}
+
+.overflow-hid {
+  overflow: hidden;
+}
+
+.clearfix {
+  zoom: 1;
+  &:after {
+    content: "";
+    display: block;
+    visibility: hidden;
+    height: 0;
+    .clear;
+  }
+}
+
+//强制不换行，超出显示省略号
+.ellipse {
+  .overflow-hid;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

@@ -28,14 +28,20 @@
         label="地址">
       </el-table-column>
     </el-table>
+    <self-list>
+      <template slot-scope='scope'>
+        <div><el-button>{{scope.item.name + scope.index}}</el-button></div>
+      </template>
+    </self-list>
   </div>
 </template>
 <script>
   import comp from '@/components/input'
   import render from '@/components/render'
+  import selfList from '@/components/list'
   export default {
     components: {
-      comp, render
+      comp, render, selfList
     },
     data () {
       return {

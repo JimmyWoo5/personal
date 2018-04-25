@@ -4,18 +4,20 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import Element from 'element-ui'
-import locale from 'element-ui/lib/locale/lang/en'
 import 'es6-promise-always'
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 import echarts from 'echarts'
 import $ajax from './ajax'
+import i18n from './lang'
 import clickoutside from './directives/clickoutside'
 import store from './store'
 import './less/theme.scss'
 import VueAMap from 'vue-amap'
 
-Vue.use(Element, { locale })
+Vue.use(Element, {
+  i18n: (key, value) => i18n.t(key, value)
+})
 
 Vue.use(VueAMap)
 VueAMap.initAMapApiLoader({
@@ -57,6 +59,7 @@ new Vue({
   el: '#app',
   router,
   store,
+  i18n,
   template: '<App/>',
   components: { App }
 })
